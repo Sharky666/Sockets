@@ -1,4 +1,13 @@
 import { Player } from './player';
-class Game {
+import { World } from './world';
 
+export class Game {
+    canvas:HTMLCanvasElement = document.createElement('canvas'); 
+    constructor() {
+        this.injectCanvas()
+    }
+    injectCanvas(){
+        document.body.appendChild(this.canvas);
+    }
 }
+

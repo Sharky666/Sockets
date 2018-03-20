@@ -9,7 +9,7 @@ gulp.task('default', (done)=>{
 
 gulp.task('build', (done) => {
     webpack({
-      entry: __dirname + '/src/web/scripts/game.ts',
+      entry: __dirname + '/src/web/scripts/main.ts',
       output: {
         path: __dirname + '/dist',
         filename: 'index_bundle.js'
@@ -22,7 +22,10 @@ gulp.task('build', (done) => {
       },
       plugins: [
         new HtmlWebpackPlugin()
-      ]
+      ],
+      resolve: {
+        extensions: [".tsx", ".ts", ".js"]
+      },
     }).run((err, stats) => {
       console.log(__dirname + '/dist');
       console.log(stats);

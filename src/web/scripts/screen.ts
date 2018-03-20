@@ -1,4 +1,4 @@
-export class World {
+export class Screen {
     constructor(){
         
     };
