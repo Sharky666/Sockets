@@ -1,4 +1,5 @@
 export interface Drawable {
+    children?: Drawable[],
     position: {
         x: number,
         y: number
