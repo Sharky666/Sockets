@@ -16,7 +16,8 @@ export class Player extends Entity {
             size: {
                 width: 20,
                 height: 20
-            }
-        }
+            },
+        },
+        updated: false
     }
 }

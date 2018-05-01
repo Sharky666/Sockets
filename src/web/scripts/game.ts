@@ -3,6 +3,7 @@ import { World } from './world';
 import { Renderer } from './renderer';
 
 export class Game {
+    player = new Player();
     canvas:HTMLCanvasElement = document.createElement('canvas');
     private renderer: Renderer;
     constructor() {
@@ -13,8 +14,11 @@ export class Game {
     injectCanvas(){
         document.body.appendChild(this.canvas);
     }
-    loop(){
-        let p = new Player();
-        this.renderer.render([p.graphics]);
+    loop = () => {
+        //TODO: limit to 60FPS.
+        this.renderer.clear();
+        this.player.graphics.position.x += 1;
+        this.renderer.render([this.player.graphics]);
+        window.requestAnimationFrame(this.loop);
     }
 }

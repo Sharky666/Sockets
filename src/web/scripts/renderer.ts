@@ -3,6 +3,10 @@ import { Drawable } from './models/drawable';
 export class Renderer {
     constructor(private ctx: CanvasRenderingContext2D) {}
 
+    clear(){
+        this.ctx.clearRect(0, 0, 900, 900);//TODO: use thef canvas size.
+    }
+
     render(drawables: Drawable[]){
         drawables.forEach(d => {
             if (d.geometry) {

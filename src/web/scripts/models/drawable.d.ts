@@ -11,5 +11,6 @@ export interface Drawable {
             height: number
         }
     },
-    img?: string,
+    updated: boolean,
+    img?: string
 }
